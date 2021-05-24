@@ -9,6 +9,16 @@
     >
 
     <Button
+        android:id="@+id/bt_view"
+        android:text="View"
+        android:background="#8FFF"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        />
+
+
+    <Button
         android:id="@+id/bt_test"
         android:text="TEST"
         android:background="#8FFF"

@@ -44,6 +44,13 @@ dependencies {
 
     api "com.squareup.okhttp3:okhttp:${versions.okhttp}"
 
+    api "com.bytedance.scene:scene:${versions.scene}"
+    api "com.bytedance.scene:scene-ui:${versions.scene}"
+    api "com.bytedance.scene:scene-shared-element-animation:${versions.scene}"
+    api "com.bytedance.scene:scene-ktx:${versions.scene}"
+
+    api 'com.orhanobut:logger:2.2.0'
+
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'

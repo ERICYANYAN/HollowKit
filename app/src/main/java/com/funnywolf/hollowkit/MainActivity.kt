@@ -10,13 +10,16 @@ import android.widget.PopupWindow
 import android.widget.TextView
 import androidx.core.view.setPadding
 import androidx.fragment.app.FragmentActivity
+import coil.util.Logger
 import com.bytedance.scene.NavigationSceneUtility
 import com.bytedance.scene.SceneDelegate
 import com.funnywolf.hollowkit.drawable.RoundRectDrawable
 import com.funnywolf.hollowkit.monitor.MainThreadWatchDog
 import com.funnywolf.hollowkit.monitor.VsyncTick
 import com.funnywolf.hollowkit.scenes.MainScene
+import com.orhanobut.logger.AndroidLogAdapter
 import kotlinx.coroutines.*
+
 
 /**
  * App 的壳 Activity，主页在 [MainScene]
@@ -35,6 +38,8 @@ class MainActivity : FragmentActivity() {
             .supportRestore(true)
             .build()
         fpsWindow = FpsWindow(this).show()
+
+        com.orhanobut.logger.Logger.addLogAdapter(AndroidLogAdapter())
     }
 
     private fun startWatchDog() {
@@ -69,7 +74,7 @@ class MainActivity : FragmentActivity() {
 
 }
 
-class FpsWindow(private val activity: Activity): PopupWindow() {
+class FpsWindow(private val activity: Activity) : PopupWindow() {
 
     private val textView: TextView = TextView(activity).also {
         it.textSize = 16F

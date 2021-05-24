@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.bytedance.scene.Scene
+import com.excelsior.scenes.ViewLocationScene
 import com.funnywolf.hollowkit.R
 import com.funnywolf.hollowkit.scenes.douban.DoubanDetailScene
 import com.funnywolf.hollowkit.scenes.behavior.ScrollBehaviorScene
@@ -36,6 +37,7 @@ class MainScene: Scene() {
         bind(R.id.bt_activity_result, ActivityResultScene::class.java)
         bind(R.id.bt_permission, PermissionRequestScene::class.java)
         bind(R.id.bt_douban, DoubanDetailScene::class.java)
+        bind(R.id.bt_view, ViewLocationScene::class.java)
     }
 
     private fun bind(id: Int, clazz: Class<out Scene>) {
