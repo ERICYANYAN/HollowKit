@@ -1,15 +1,16 @@
-package com.excelsior
+package com.funnywolf.hollowkit
 
 import android.os.Bundle
-import android.support.wearable.activity.WearableActivity
+import androidx.appcompat.app.AppCompatActivity
+import com.alibaba.android.arouter.facade.annotation.Route
 
-class TestActivity : WearableActivity() {
+@Route(path = "/test/activity")
+class TestActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_test)
 
-        // Enables Always-on
-        setAmbientEnabled()
     }
+
 }

@@ -6,6 +6,8 @@ apply plugin: 'kotlin-android-extensions'
 
 apply from: '../version.gradle'
 
+apply plugin: 'kotlin-kapt'
+
 android {
     compileSdkVersion versions.compileSdk
     defaultConfig {
@@ -15,6 +17,12 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
     }
     buildTypes {
         release {
@@ -36,6 +44,7 @@ dependencies {
     implementation "androidx.appcompat:appcompat:${versions.appcompat}"
     implementation "androidx.core:core-ktx:${versions.core_ktx}"
 
+    // view 相关
     implementation "com.google.android.material:material:${versions.material}"
     implementation "androidx.recyclerview:recyclerview:${versions.recyclerview}"
     implementation "androidx.constraintlayout:constraintlayout:${versions.constraintlayout}"
@@ -43,17 +52,27 @@ dependencies {
 
     implementation "io.reactivex.rxjava2:rxjava:${versions.rxjava}"
     implementation "io.reactivex.rxjava2:rxandroid:${versions.rxandroid}"
+
     implementation "com.bytedance.scene:scene:${versions.scene}"
     implementation "com.bytedance.scene:scene-ui:${versions.scene}"
     implementation "com.bytedance.scene:scene-shared-element-animation:${versions.scene}"
     implementation "com.bytedance.scene:scene-ktx:${versions.scene}"
+
+    // 图片加载库
     implementation "io.coil-kt:coil:${versions.coil}"
 
+    // kotlin 协程
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:${versions.coroutines}"
 
-    implementation 'com.orhanobut:logger:2.2.0'
+    // log
+    implementation "com.orhanobut:logger:${versions.logger}"
+
+
+    implementation "com.alibaba:arouter-api:${versions.arouter}"
+    kapt "com.alibaba:arouter-compiler:${versions.arouter}"
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+    compileOnly 'com.google.android.wearable:wearable:2.5.0'
 }

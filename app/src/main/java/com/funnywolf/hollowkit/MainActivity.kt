@@ -1,6 +1,7 @@
 package com.funnywolf.hollowkit
 
 import android.app.Activity
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
@@ -11,6 +12,7 @@ import android.widget.TextView
 import androidx.core.view.setPadding
 import androidx.fragment.app.FragmentActivity
 import coil.util.Logger
+import com.alibaba.android.arouter.launcher.ARouter
 import com.bytedance.scene.NavigationSceneUtility
 import com.bytedance.scene.SceneDelegate
 import com.funnywolf.hollowkit.drawable.RoundRectDrawable
@@ -39,7 +41,9 @@ class MainActivity : FragmentActivity() {
             .build()
         fpsWindow = FpsWindow(this).show()
 
-        com.orhanobut.logger.Logger.addLogAdapter(AndroidLogAdapter())
+//        startActivity(Intent(this,TestActivity::class.java))
+        ARouter.getInstance().build("/activity/StandardActivity").navigation();
+
     }
 
     private fun startWatchDog() {

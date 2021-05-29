@@ -1,4 +1,4 @@
-package com.excelsior
+package com.funnywolf.hollowkit
 
 import android.app.Application
 import com.alibaba.android.arouter.launcher.ARouter

@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.alibaba.android.arouter.launcher.ARouter
 import com.bytedance.scene.Scene
 import com.excelsior.scenes.ViewLocationScene
 import com.funnywolf.hollowkit.R
@@ -38,6 +39,9 @@ class MainScene: Scene() {
         bind(R.id.bt_permission, PermissionRequestScene::class.java)
         bind(R.id.bt_douban, DoubanDetailScene::class.java)
         bind(R.id.bt_view, ViewLocationScene::class.java)
+        bind(R.id.bt_view, ViewLocationScene::class.java)
+
+//        ARouter.getInstance().build("/activity_study/StandardActivity").navigation();
     }
 
     private fun bind(id: Int, clazz: Class<out Scene>) {

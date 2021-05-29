@@ -1,2 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.funnywolf.hollowkit" />
+    package="com.funnywolf.hollowkit">
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <uses-feature android:name="android.hardware.type.watch" />
+
+    <application>
+        <activity
+            android:name="com.excelsior.activity_study.StandardActivity"
+            android:taskAffinity="com.funnywolf.hollowkit.sta"
+            android:launchMode="standard" />
+        <activity
+            android:name="com.excelsior.activity_study.SingleTopActivity"
+
+            android:launchMode="singleTop" />
+        <activity
+            android:name="com.excelsior.activity_study.SingleTaskActivity"
+            android:launchMode="singleTask" />
+        <!--            android:taskAffinity="com.funnywolf.hollowkit.task"-->
+        <activity
+            android:name="com.excelsior.activity_study.SingleInstanceActivity"
+            android:launchMode="singleInstance" />
+        <!--            android:taskAffinity="com.funnywolf.hollowkit.instance"-->
+
+    </application>
+
+</manifest>
